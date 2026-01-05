@@ -1,5 +1,6 @@
 import { BNSSearch } from "@/components/bns/BNSSearch";
 import { BookOpen, Scale, ArrowRight, TrendingUp } from "lucide-react";
+import { ShieldAlert } from "lucide-react";
 import Link from "next/link";
 import { BNS_DATA } from "@/lib/bns-data";
 
@@ -101,3 +102,4 @@ export default function BNSPage() {
         </main>
     );
 }
+
