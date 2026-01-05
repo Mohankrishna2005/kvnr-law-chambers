@@ -3,7 +3,7 @@ import "./globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable} font-sans`}>
+      <body className="font-sans">
   {/* Bar Council Disclaimer */}
   <div className="bg-gray-900 text-white text-xs text-center p-2">
     As per the rules of the Bar Council of India, this website does not advertise or solicit work.
@@ -27,4 +27,5 @@ export default function RootLayout({ children }) {
 
   <main>{children}</main>
 </body>
+
 
