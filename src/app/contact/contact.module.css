@@ -1,0 +1,62 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--surface);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.infoItem {
+    margin-bottom: 2rem;
+}
+
+.infoItem h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.callBtn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

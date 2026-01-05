@@ -1,0 +1,235 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-family: var(--font-serif);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-family: var(--font-sans);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Search Bar */
+.searchWrapper {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.searchBox {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: 2px solid var(--border);
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: var(--shadow-sm);
+    padding-right: 3rem;
+    font-family: var(--font-sans);
+}
+
+.searchBox:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+}
+
+/* Table Design */
+.tableContainer {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    /* For rounded corners */
+    border: 1px solid var(--border);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+}
+
+.table thead th {
+    background: var(--primary);
+    color: #fff;
+    padding: 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table td {
+    padding: 1rem 1.2rem;
+    color: var(--text);
+    vertical-align: middle;
+}
+
+/* Badges */
+.ipcBadge {
+    background: #ffebee;
+    color: #c62828;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-block;
+    min-width: 50px;
+    text-align: center;
+}
+
+.bnsBadge {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-block;
+    min-width: 50px;
+    text-align: center;
+}
+
+.offenceName {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Category Headers in List */
+.categoryRow td {
+    background: #f1f5f9;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    padding: 0.8rem 1.2rem;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 4rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Footer Disclaimer */
+.disclaimer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* Mobile Responsiveness - Card Layout */
+@media (max-width: 900px) {
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.2rem;
+        background: var(--surface);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .table td {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+    }
+
+    .table td:last-child {
+        border-bottom: none;
+        display: block;
+        text-align: left;
+        margin-top: 1rem;
+        padding-top: 0.5rem;
+    }
+
+    .table td:last-child::before {
+        display: block;
+        margin-bottom: 0.5rem;
+        clear: both;
+    }
+
+    /* Data Labels for Mobile */
+    .table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 600;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    .offenceName {
+        font-size: 1.2rem;
+        color: var(--primary);
+        margin-bottom: 0.2rem;
+    }
+
+    .categoryRow td {
+        display: block;
+        background: var(--primary);
+        color: #fff;
+        text-align: center;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+}

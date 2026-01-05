@@ -1,0 +1,220 @@
+/* Animations */
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Strong dark-blue overlay (85%) with subtle gradient movement + Legal Image */
+    background:
+        linear-gradient(135deg, rgba(8, 27, 56, 0.85) 0%, rgba(15, 44, 89, 0.80) 100%),
+        url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2070&auto=format&fit=crop');
+    background-size: 200% 200%, cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: backgroundMove 15s ease infinite;
+    color: #fff;
+    padding: 0 2rem;
+    margin-top: -90px;
+    padding-top: 90px;
+    overflow: hidden;
+}
+
+/* Vignette effect */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+}
+
+.heroContent {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 4rem;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--secondary);
+    /* Gold */
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 3.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* The Premium Glass Quote Container */
+.glassQuote {
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    /* Reduced opacity for subtlety */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 3rem 4rem;
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    /* Thin Gold Border */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quoteIcon {
+    font-size: 3rem;
+    line-height: 1;
+    font-family: var(--font-serif);
+    color: rgba(255, 255, 255, 0.2);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* New Avatar Style */
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+.quoteText {
+    font-family: var(--font-sans);
+    /* Clean Professional Sans-Serif */
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: rgba(240, 240, 240, 0.95);
+    /* Soft off-white */
+    font-weight: 300;
+}
+
+.highlight {
+    font-weight: 500;
+    color: #fff;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+/* Specific button overrides for Hero if needed, 
+   though global .btn-primary is already gold */
+.btnHeroPrimary {
+    background: var(--secondary);
+    color: var(--primary);
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btnHeroPrimary:hover {
+    background: var(--secondary-light);
+    /* Brighter gold */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btnHeroSecondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Thin white border */
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btnHeroSecondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .glassQuote {
+        padding: 2rem;
+        margin: 0 1rem 3rem;
+    }
+
+    .quoteText {
+        font-size: 1rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
