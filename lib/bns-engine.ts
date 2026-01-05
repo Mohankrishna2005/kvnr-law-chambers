@@ -19,7 +19,7 @@ export function searchBNS(query: string): BNSSection[] {
         return (
             item.section.includes(lowerQuery) ||
             item.title.toLowerCase().includes(lowerQuery) ||
-            item.item.keywords.some((k) => k.toLowerCase().includes(lowerQuery)) || // Fixed type error prediction: item.keywords
+            item.keywords.some((k) => k.toLowerCase().includes(lowerQuery)) || // Fixed type error prediction: item.keywords
             item.category.toLowerCase().includes(lowerQuery)
         );
     });
@@ -28,3 +28,4 @@ export function searchBNS(query: string): BNSSection[] {
 export function getSection(sectionId: string): BNSSection | undefined {
     return (bnsData as BNSSection[]).find((item) => item.section === sectionId);
 }
+
